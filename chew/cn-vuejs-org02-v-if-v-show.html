@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  
+  <script>
+ 
+  </script>
+</head>
+<body >
+<div id="app">
+  <div class="hi">{{message}}</div> 
+  <div v-if="loading">here is v-if. If loading==false then this div was not loaded in html source</div>
+  <div v-show="loading">here is v-show. If loading==false then this div's style was been set to 'display:none;'  in html source</div>
+<hr>
+  <input type="text" v-model="score">
+  <div v-if="score>=60">Ok!</div>
+  <div v-else="score<=60">Well!</div>
+
+  <script src="https://unpkg.com/vue"></script>
+  <script>
+var app = new Vue({
+  el:'#app',
+  data: {
+    message : 'Hello World!',
+    score: 0,
+    loading: false
+  }
+})
+  </script>
+</div>
+</body>
+</html>
