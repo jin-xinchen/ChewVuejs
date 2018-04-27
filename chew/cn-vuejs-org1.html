@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width">
+  <title>JS Bin http://jsbin.com/zuzimureji/1/edit?html,js,output</title>
+</head>
+<body>
+  <div id="appDOM">
+    {{message}}
+    {{number *8}}
+  </div>
+  
+  <script src="https://unpkg.com/vue@2.3.4/dist/vue.js"></script>
+<script>
+var app=new Vue({
+  el:"#appDOM",//element
+  data:{
+    message:'Hi Vue!',
+    number:10
+  }
+});
+</script>
+</body>
+</html>
