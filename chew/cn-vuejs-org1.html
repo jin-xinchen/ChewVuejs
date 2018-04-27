@@ -9,6 +9,20 @@
   <div id="appDOM">
     {{message}}
     {{number *8}}
+   <hr>
+
+   <ul>
+     <li v-for="product in products">
+       {{product}}
+     </li>
+   </ul>
+  <hr>
+   <ul>
+     <li v-for="product in productsOnline">
+       {{product.quantity}} {{product.name}}
+     </li>
+   </ul>
+   <hr/>
   </div>
   
   <script src="https://unpkg.com/vue@2.3.4/dist/vue.js"></script>
@@ -17,7 +31,14 @@ var app=new Vue({
   el:"#appDOM",//element
   data:{
     message:'Hi Vue!',
-    number:10
+    number:10,
+    products:['boots','shoe','tools'],
+    productsOnline:[]
+  },
+  created(){
+    fetch('https://api.myjson.com/bins/74l63')
+     .then(response=>response.json())
+     .then(json=>{this.productsOnline=json.products})
   }
 });
 </script>
